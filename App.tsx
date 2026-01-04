@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -23,7 +22,7 @@ const App: React.FC = () => {
   }, [lang]);
 
   return (
-    <div className="min-h-screen font-cairo overflow-x-hidden bg-white">
+    <div className="min-h-screen font-cairo overflow-x-hidden bg-white selection:bg-club-primary selection:text-black">
       <Navbar lang={lang} setLang={setLang} />
       
       <main>
@@ -31,7 +30,7 @@ const App: React.FC = () => {
           <Hero lang={lang} />
         </section>
         
-        <section id="about" className="py-24">
+        <section id="about" className="py-24 bg-white">
           <About lang={lang} />
         </section>
 
@@ -43,7 +42,7 @@ const App: React.FC = () => {
           <Matches lang={lang} />
         </section>
 
-        <section id="classification" className="py-24">
+        <section id="classification" className="py-24 bg-white">
           <LeagueTable lang={lang} />
         </section>
         
@@ -51,7 +50,7 @@ const App: React.FC = () => {
           <News lang={lang} />
         </section>
 
-        <section id="team" className="py-24">
+        <section id="team" className="py-24 bg-white">
           <Team lang={lang} />
         </section>
         
@@ -66,7 +65,7 @@ const App: React.FC = () => {
 
       <Footer lang={lang} />
       
-      {/* AI Assistant Button */}
+      {/* AI Assistant - Netlify/Ready and Fully Interactive */}
       <GeminiAssistant lang={lang} />
     </div>
   );

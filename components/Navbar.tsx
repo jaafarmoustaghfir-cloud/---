@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS, CLUB_NAME, CLUB_LOGO_URL } from '../constants';
@@ -43,25 +44,30 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Brand Section */}
+          {/* Brand Section - Perfectly styled split text and official logo */}
           <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection('home')}>
+            {/* Left Accent Bar */}
             <div className="h-8 w-1.5 bg-club-primary rounded-full hidden sm:block"></div>
+            
             <div className="flex flex-col text-right">
               <div className="flex items-center gap-1 font-black text-2xl tracking-tighter leading-none">
                 <span className="text-club-primary">CHABAB</span>
                 <span className="text-white">HOUARA</span>
               </div>
-              <span className="text-xs font-bold text-gray-300 mt-1">
+              <span className="text-[11px] font-bold text-gray-400 mt-1">
                 نادي شباب هوارة
               </span>
             </div>
+
+            {/* Official Shield Logo */}
             <div className="relative flex-shrink-0 ml-2">
+              <div className="absolute inset-0 bg-club-primary/20 rounded-full blur-md animate-pulse group-hover:bg-club-primary/40"></div>
               <img
                 src={CLUB_LOGO_URL}
                 alt="Chabab Houara Logo"
-                className="w-14 h-14 object-contain logo-shadow transition-transform group-hover:scale-110 drop-shadow-[0_0_10px_rgba(255,191,0,0.3)]"
+                className="w-14 h-14 object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(255,191,0,0.4)]"
                 onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/56x56?text=Logo";
+                  e.currentTarget.src = "https://ui-avatars.com/api/?name=CCH&background=FFBF00&color=000";
                 }}
               />
             </div>
@@ -130,4 +136,3 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
 };
 
 export default Navbar;
-
