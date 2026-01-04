@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS, CLUB_NAME, CLUB_LOGO_URL } from '../constants';
@@ -44,11 +43,9 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Brand Section - Updated to use official shield logo */}
+          {/* Brand Section */}
           <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection('home')}>
-            {/* Yellow Bar Accent */}
             <div className="h-8 w-1.5 bg-club-primary rounded-full hidden sm:block"></div>
-            
             <div className="flex flex-col text-right">
               <div className="flex items-center gap-1 font-black text-2xl tracking-tighter leading-none">
                 <span className="text-club-primary">CHABAB</span>
@@ -58,20 +55,19 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
                 نادي شباب هوارة
               </span>
             </div>
-
-            {/* Official Shield Logo */}
             <div className="relative flex-shrink-0 ml-2">
-               <img 
-                src={CLUB_LOGO_URL} 
-                alt="Chabab Houara Logo" 
+              <img
+                src={CLUB_LOGO_URL}
+                alt="Chabab Houara Logo"
                 className="w-14 h-14 object-contain logo-shadow transition-transform group-hover:scale-110 drop-shadow-[0_0_10px_rgba(255,191,0,0.3)]"
                 onError={(e) => {
-                  e.currentTarget.src = "https://share.google/MMGC62l0qVNUArga9";
+                  e.currentTarget.src = "https://via.placeholder.com/56x56?text=Logo";
                 }}
               />
             </div>
           </div>
 
+          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 space-x-reverse">
             {navLinks.map((link) => (
               <button
@@ -91,6 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
             </button>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -133,3 +130,4 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
 };
 
 export default Navbar;
+
