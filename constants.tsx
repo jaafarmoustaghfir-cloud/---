@@ -6,7 +6,8 @@ export const CLUB_NAME_FR = "Chabab Houara";
 export const FOUNDED_YEAR = "1965";
 export const FOUNDER_NAME = "أكشود عبد الغني";
 export const FOUNDER_NAME_FR = "Abdelghani Akchoud";
-export const CLUB_LOGO_URL = "https://share.google/MMGC62l0qVNUArga9";
+// Updated logo URL from Imgur (Direct link for compatibility)
+export const CLUB_LOGO_URL = "https://i.imgur.com/DcGovfa.png";
 
 export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/clubchababhouara",

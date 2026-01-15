@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env': process.env
+    'process.env': {}
   },
   build: {
     outDir: 'dist',
@@ -16,6 +16,5 @@ export default defineConfig({
       },
     },
   },
-  // If deploying to GitHub Pages under a subfolder, change this to '/your-repo-name/'
-  base: './',
+  base: './', // Ensures relative paths work on both GitHub Pages and Netlify
 });
